@@ -60,6 +60,8 @@ func main() {
 }
 
 func connect() (driver.Conn, error) {
+	log.Debug().Msg("Connecting...")
+
 	connectionURL := env.String("CLICKHOUSE_URL", "localhost:9000", "ClickHouse server URL")
 
 	database := env.String("CLICKHOUSE_DB", "default", "ClickHouse database name")
